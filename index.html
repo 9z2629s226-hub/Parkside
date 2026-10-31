@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#173f39"><title>Parkside — California, ranked.</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<div class="app-shell">
+ <aside class="sidebar">
+  <a class="brand" href="#home" aria-label="Parkside home"><span class="brand-mark"><svg viewBox="0 0 32 32" fill="none"><path d="M4 24C8 16 10 14 14 20c3-10 5-13 8-9l6 13" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="10" cy="9" r="2" fill="currentColor"/></svg></span><span>parkside<span class="brand-period">.</span><small>THE PARK COMPANION</small></span></a>
+  <div class="side-label">EXPLORE</div>
+  <nav class="side-nav" aria-label="Main navigation">
+   <button class="nav-item active" data-nav="rankings"><span class="nav-icon">⌂</span> Discover <span class="nav-arrow">›</span></button>
+   <button class="nav-item" data-nav="rides"><span class="nav-icon">♧</span> Rides</button>
+   <button class="nav-item" data-nav="parks"><span class="nav-icon">▧</span> Parks</button>
+   <button class="nav-item" data-nav="restaurants"><span class="nav-icon">♨</span> Restaurants</button>
+   <button class="nav-item" data-nav="theming"><span class="nav-icon">✧</span> Theming</button>
+  </nav>
+  <div class="side-label second-label">YOUR PARKSIDE</div>
+  <nav class="side-nav"><button class="nav-item" data-nav="saved"><span class="nav-icon">♡</span> Saved places <span class="saved-count">0</span></button></nav>
+  <div class="sidebar-bottom"><div class="sun-icon">✳</div><strong>Made for park people.</strong><p>A little more magic for your next California adventure.</p><span>MADE IN CALIFORNIA &nbsp; ☼</span></div>
+ </aside>
+ <main class="main" id="home">
+  <header class="topbar"><div class="breadcrumb">Explore <span>/</span> <strong>California rankings</strong></div><div class="top-actions"><div class="search-wrap"><span class="search-icon">⌕</span><input id="search" type="search" placeholder="Search parks, rides, food..." aria-label="Search rankings"><span class="search-shortcut">⌘ K</span></div><button class="top-saved" id="topSaved" aria-label="View saved places">♡</button><span class="avatar">P</span></div></header>
+  <div class="content">
+   <section class="hero"><div class="hero-content"><div class="eyebrow light"><span class="sparkle">✳</span> YOUR GUIDE TO THE GOLDEN STATE</div><h1>Good days start<br>at the <em>park.</em></h1><p>From iconic rides to hidden gems, discover the best of California's theme parks.</p><button class="hero-button" id="exploreButton">Explore the rankings <span>↗</span></button></div><div class="hero-stamp"><span>☼</span> CALIFORNIA<br>IS CALLING</div><div class="hero-bottom">YOUR NEXT FAVORITE MEMORY AWAITS <span>✦</span></div></section>
+   <section class="intro" id="rankings"><div><div class="eyebrow green"><span>✳</span> THE GOOD STUFF, RANKED</div><h2>Find your kind of fun<span>.</span></h2><p>All the must-dos, all in one place. Where will you go first?</p></div><div class="intro-note"><span>✦</span> A LITTLE SOMETHING FOR EVERYONE</div></section>
+   <div class="category-tabs" role="tablist" aria-label="Ranking category"><button class="category-tab active" role="tab" data-category="rides" aria-selected="true"><span>♧</span> Rides <small>01</small></button><button class="category-tab" role="tab" data-category="parks" aria-selected="false"><span>▧</span> Parks <small>02</small></button><button class="category-tab" role="tab" data-category="restaurants" aria-selected="false"><span>♨</span> Restaurants <small>03</small></button><button class="category-tab" role="tab" data-category="theming" aria-selected="false"><span>✧</span> Theming <small>04</small></button></div>
+   <section class="rank-section"><div class="section-heading"><div><div class="eyebrow coral">THE PARKSIDE LIST <span>✦</span></div><h3 id="listTitle">Top rides in California</h3><p id="listSubtitle">The thrills, chills, and can't-miss classics worth the wait.</p></div><div class="filters"><label class="select-label"><span>Park</span><select id="parkFilter" aria-label="Filter by park"><option value="all">All parks</option><option>Disneyland Park</option><option>Disney California Adventure</option><option>Universal Studios Hollywood</option><option>Six Flags Magic Mountain</option><option>Knott's Berry Farm</option></select></label><label class="select-label sort-label"><span>Sort by</span><select id="sortFilter" aria-label="Sort rankings"><option value="rank">Top ranked</option><option value="name">Name A–Z</option><option value="personal">Your rating</option></select></label></div></div>
+    <div class="result-line"><span id="resultCount">SHOWING ALL PICKS</span><span>CURATED FOR YOUR NEXT ADVENTURE <b>✳</b></span></div><div class="directory-notice" id="directoryNotice" role="status"></div><div class="cards" id="cards"></div><div class="load-wrap"><button id="loadMore" hidden>Show more places ↓</button></div><div id="empty" class="empty" hidden><span>☼</span><h3>No matches this time.</h3><p>Try another search or park filter and find your next favorite.</p><button id="clearFilters">Clear filters</button></div>
+    <div class="list-footer"><span>✳ &nbsp; GOOD TIMES LOOK GOOD ON YOU</span><span>MORE CALIFORNIA ADVENTURES AWAIT &nbsp; ↗</span></div>
+   </section>
+   <footer><a class="footer-logo" href="#home">parkside<span>.</span></a><span>Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a> · <a href="https://opendatacommons.org/licenses/odbl/" target="_blank" rel="noopener noreferrer">ODbL</a></span><span>CALIFORNIA, WITH LOVE ☼</span></footer>
+  </div>
+ </main>
+</div>
+<dialog id="detailModal" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Close details">×</button><div class="modal-image" id="modalImage"></div><div class="modal-body"><div class="eyebrow coral" id="modalEyebrow"></div><h2 id="modalTitle"></h2><p class="modal-location" id="modalLocation"></p><div class="modal-score"><span class="score-star">★</span><strong id="modalScore"></strong><span>Parkside score</span></div><p id="modalDescription" class="modal-description"></p><a id="modalSource" class="source-link" target="_blank" rel="noopener noreferrer">Check the operator’s listing ↗</a><div class="rating-box"><div><strong>Your rating</strong><p>Been there? Leave your mark.</p></div><div class="rating-stars" id="ratingStars" aria-label="Your rating"></div></div><button class="modal-save" id="modalSave"></button><p class="storage-note">Your ratings and saved places stay on this device.</p></div></dialog>
+<script src="directory.js"></script><script src="osm-directory.js"></script><script src="app.js"></script></body></html>
